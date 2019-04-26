@@ -3,8 +3,17 @@ $(document).ready(function() {
     event.preventDefault();
 
     var input = $("#Grocery").val()
-    console.log(input);
+    var inputArray = input.split(" ")
+    inputArray.sort()
+    var newArray = inputArray.map(function(item) {
+      return item.toUpperCase()
+    });
+    newArray.forEach(function(item){
+      $("#output").append("<li>"+ item + "</li>");
+        console.log(item)
+    });
+    console.log(inputArray);
 
-    
+
   });
 });
